@@ -21,7 +21,8 @@ def handler(signal, frame):
     print("\n[+] IP Search done.")
     if len(ip_list) != 0:
         with open("output.txt", "wb") as fd:
-            fd.writelines(ip_list)
+            new_list = "\n".join(ip_list)
+            fd.write(new_list)
         print("[+] Please check output.txt.")
     else:
         print("[-] No IP alive.")
@@ -88,7 +89,8 @@ def main():
     print("[+] IP Search done.")
     if len(ip_list) != 0:
         with open("output.txt", "wb") as fd:
-            fd.writelines(ip_list)
+            new_list = "\n".join(ip_list)
+            fd.write(new_list)
         print("[+] Please check output.txt.")
     else:
         print("[-] No IP alive.")
