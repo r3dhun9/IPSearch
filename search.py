@@ -11,7 +11,7 @@ title = """
 /___/_/    /____/\___/\__,_/_/   \___/_/ /_/
 
 
-An automatic ip search tool by Redhung aka r3dhun9.
+An automatic ip searching tool by Redhung aka r3dhun9.
 Contact: redhung@hung.red
 """
 
@@ -70,12 +70,12 @@ def main():
     print(title)
     if len(sys.argv) != 3:
         print("[!] Usage: python search.py <ip> <netmask>")
-        print("[!] E.g. ip: 192.168.0.0, netmask: 255.255.255.0")
+        print("[!] E.g. python search.py 192.168.0.0 255.255.255.0")
         sys.exit()
     ip = sys.argv[1]
     netmask = sys.argv[2]
     print("[+] Start searching ...")
-    print("[+] You may press Ctrl+C to interrupt the process and get current result.")
+    print("[+] You may press Ctrl+C to interrupt the process and get the current result.")
     if netmask == "255.255.255.0":
         search_24(ip)
     elif netmask == "255.255.0.0":
