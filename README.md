@@ -9,13 +9,13 @@
 ---
 
 # Features
-This is an automatic tool searching alive ip in defined subnet.
+* This is an automatic tool searching alive ip in defined subnet.
 
-It supports 24, 16, 8 netmasks.
+* It supports 24, 16, 8 netmasks.
 
-You may press Ctrl+C to interrupt the process and get the current result.
+* You may press Ctrl+C to interrupt the process and get the current result.
 
-The current result would write to the output.txt.
+* The current result would write to the output.txt.
 
 # Installation
 ```git
