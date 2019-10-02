@@ -23,3 +23,5 @@ python search.py
 ```
 
 > You may press Ctrl+C to interrupt the process and get the current result.
+
+![](https://i.imgur.com/BDK1zKr.png)
