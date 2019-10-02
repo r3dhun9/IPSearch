@@ -20,7 +20,7 @@ ip_list = []
 def handler(signal, frame):
     print("\n[+] IP Search done.")
     if len(ip_list) != 0:
-        with open("output.txt", "wb") as fd:
+        with open("output.txt", "w") as fd:
             new_list = "\n".join(ip_list)
             fd.write(new_list)
         print("[+] Please check output.txt.")
@@ -36,7 +36,7 @@ def search_24(ip):
         cmd = "ping -c 1 -t 1 " + c_ip
         p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
         buf = p.stdout.read()
-        if buf.find("from") != -1:
+        if buf.find(b"from") != -1:
             print("[!] Found the alive target: " + c_ip)
             ip_list.append(c_ip)
 
@@ -49,7 +49,7 @@ def search_16(ip):
             cmd = "ping -c 1 -t 1 " + c_ip
             p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
             buf = p.stdout.read()
-            if buf.find("from") != -1:
+            if buf.find(b"from") != -1:
                 print("[!] Found the alive target: " + c_ip)
                 ip_list.append(c_ip)
 
@@ -63,7 +63,7 @@ def search_8(ip):
                 cmd = "ping -c 1 -t 1 " + c_ip
                 p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
                 buf = p.stdout.read()
-                if buf.find("from") != -1:
+                if buf.find(b"from") != -1:
                     print("[!] Found the alive target: " + c_ip)
                     ip_list.append(c_ip)
 
@@ -71,24 +71,24 @@ def main():
     print(title)
     if len(sys.argv) != 3:
         print("[!] Usage: python search.py <ip> <netmask>")
-        print("[!] E.g. python search.py 192.168.0.0 255.255.255.0")
+        print("[!] E.g. python search.py 192.168.0.0 24")
         sys.exit()
     ip = sys.argv[1]
     netmask = sys.argv[2]
     print("[+] Start searching ...")
     print("[+] You may press Ctrl+C to interrupt the process and get the current result.")
-    if netmask == "255.255.255.0":
+    if netmask == "24":
         search_24(ip)
-    elif netmask == "255.255.0.0":
+    elif netmask == "16":
         search_16(ip)
-    elif netmask == "255.0.0.0":
+    elif netmask == "8":
         search_8(ip)
     else:
-        print("[-] Error: Netmask out of range.")
+        print("[-] Error: Netmask only supports 24, 16, 8.")
         sys.exit()
     print("[+] IP Search done.")
     if len(ip_list) != 0:
-        with open("output.txt", "wb") as fd:
+        with open("output.txt", "w") as fd:
             new_list = "\n".join(ip_list)
             fd.write(new_list)
         print("[+] Please check output.txt.")
