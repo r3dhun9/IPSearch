@@ -9,7 +9,7 @@
 ---
 
 # Description
-An automatic tool searching ip in defined subnet.
+This is an automatic tool searching alive ip in defined subnet.
 
 Redhung 2019.10.02
 
