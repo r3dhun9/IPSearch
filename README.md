@@ -21,3 +21,5 @@ git clone https://github.com/r3dhun9/IPSearch.git
 cd IPSearch
 python search.py
 ```
+
+> You may press Ctrl+C to interrupt the process and get the current result.
