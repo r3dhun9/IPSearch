@@ -11,6 +11,8 @@
 # Description
 This is an automatic tool searching alive ip in defined subnet.
 
+It supports /24, /16, /8 netmasks.
+
 Redhung 2019.10.02
 
 # Usage
