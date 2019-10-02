@@ -8,14 +8,16 @@
 
 ---
 
-# Description
+# Features
 This is an automatic tool searching alive ip in defined subnet.
 
-It supports /24, /16, /8 netmasks.
+It supports 24, 16, 8 netmasks.
 
-Redhung 2019.10.02
+You may press Ctrl+C to interrupt the process and get the current result.
 
-# Usage
+The current result would write to the output.txt.
+
+# Installation
 ```git
 git clone https://github.com/r3dhun9/IPSearch.git
 cd IPSearch
